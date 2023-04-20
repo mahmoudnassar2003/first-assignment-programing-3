@@ -1,0 +1,11 @@
+public class CurrencyConverter {
+    private double exchangeRate = 3.6; // exchange rate from dollars to shekels
+
+    public double convertToShekels(double dollars) {
+        return dollars * exchangeRate;
+    }
+
+    public double convertToDollars(double shekels) {
+        return shekels / exchangeRate;
+    }
+}

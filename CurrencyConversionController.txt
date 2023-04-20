@@ -1,0 +1,23 @@
+public class CurrencyConversionController {
+    @FXML
+    private TextField dollarsField;
+    @FXML
+    private TextField shekelsField;
+
+    private CurrencyConverter currencyConverter = new CurrencyConverter();
+
+    @FXML
+    private void handleConvertButton(ActionEvent event) {
+        String dollarsText = dollarsField.getText();
+        String shekelsText = shekelsField.getText();
+
+        if (!dollarsText.isEmpty() && shekelsText.isEmpty()) {
+            double dollars = Double.parseDouble(dollarsText);
+            double shekels = currencyConverter.convertToShekels(dollars);
+            shekelsField.setText(String.valueOf(shekels));
+        } else if (dollarsText.isEmpty() && !shekelsText.isEmpty()) {
+            double shekels = Double.parseDouble(shekelsText);
+            double dollars = currencyConverter.convertToDollars(shekels);
+            dollarsField.setText(String.valueOf(dollars));
+        } else {
+            showAlert("

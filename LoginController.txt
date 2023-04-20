@@ -1,0 +1,25 @@
+public class LoginController {
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private PasswordField passwordField;
+
+    @FXML
+    private void handleLoginButton(ActionEvent event) {
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+
+        if ("user".equals(username) && "userpass".equals(password)) {
+            ViewManager.switchToCurrencyConversionView();
+        } else {
+            showAlert("Invalid username or password");
+        }
+    }
+
+    private void showAlert(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+}

@@ -1,0 +1,9 @@
+<AnchorPane fx:id="conversionPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.CurrencyConversionController">
+    <Label text="Currency Conversion Page" />
+    <Label text="Dollars" />
+    <TextField fx:id="dollarsField" />
+    <Label text="Shekels" />
+    <TextField fx:id="shekelsField" />
+    <Button text="Convert" onAction="#handleConvertButton" />
+    <Button text="Log out" onAction="#handleLogoutButton" />
+</AnchorPane>
